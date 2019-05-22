@@ -2,20 +2,19 @@
 $(() => {
 
   let theTime = undefined
-  let theTimeRandomized = undefined
   let timeString = undefined
-  let timeStringRandom = undefined
   const hrs = 0
   const min = 1
   const sec = 2
 
   const maxVariance = 5
   let variance = 0
-  const changeVariance = 5000
+  const changeVariance = 15000
 
 
   const $displayedTime = $('.time')
-  const $displayedTimeRandom = $('.timeRandom')
+  const $displayedDetails = $('.timeRandom')
+  const $secondBlinker = $('.secondBlinker')
 
   onload()
 
@@ -24,6 +23,7 @@ $(() => {
     updateTime()
     updateClock()
     randomizeTime()
+    $displayedDetails.text('± 0...' + maxVariance + 'mins / ' + changeVariance/1000 + 'secs')
   }
 
   function updateTime() {
@@ -51,7 +51,6 @@ $(() => {
   }
 
 
-
   function randomizeTime() {
     variance = (Math.floor(Math.random() * ((maxVariance*2)+1))-maxVariance)
     console.log('Variance: ', variance)
@@ -72,15 +71,24 @@ $(() => {
     } else if (hours < 0) {
       hours = hours + 24
     }
+    const hoursx10 = Math.floor(hours/10)
+    const hoursx01 = hours%10
+    const minutesx10 = Math.floor(minutes/10)
+    const minutesx01 = minutes%10
+    $('div.hoursx10').html('<img src="./images/D1-' + hoursx10 + '.png">')
+    $('div.hoursx01').html('<img src="./images/D2-' + hoursx01 + '.png">')
+    $('div.minutesx10').html('<img src="./images/D3-' + minutesx10 + '.png">')
+    $('div.minutesx01').html('<img src="./images/D4-' + minutesx01 + '.png">')
+  }
 
-    timeStringRandom = hours + ':' + minutes
-    console.log('random time: ', timeStringRandom)
-    $displayedTimeRandom.text(timeStringRandom)
+  function seconds() {
+    $secondBlinker.toggle()
   }
 
   setTimeout(function(){
     setInterval(randomizeTime, changeVariance,0)
     setInterval(updateClock, 1000)
+    setInterval(seconds, 500)
   })
 
 })
