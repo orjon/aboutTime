@@ -1,0 +1,30 @@
+@import 'variables';
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  user-select: none;
+  font-family: 'Karla', sans-serif;
+  color: #F00;
+}
+
+body {
+
+  height: 100vh;
+  width: 100vw;
+  border: $devborder solid green;
+  background-color: lightgrey;
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: hidden;
+
+}
+
+.flexColCenter {
+  border: $devborder solid red;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
