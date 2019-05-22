@@ -5,7 +5,7 @@
   padding: 0px;
   box-sizing: border-box;
   user-select: none;
-  font-family: 'Karla', sans-serif;
+  font-family: 'Inconsolata', monospace;
   color: #666;
 }
 
@@ -26,8 +26,8 @@ body {
 }
 
 .abouttime {
-  width: 470px;
-  height: 470px;
+  width: $abouttimeSize;
+  height: $abouttimeSize;
   border: $devborder solid yellow;
   position: relative;
 }
@@ -47,26 +47,15 @@ body {
 .details {
   width: 100%;
   border: $devborder solid cyan;
-}
-
-.timeWrapper {
-  display: flex;
-  flex-direction: row;
-}
-
-.timeLabel {
-  border: $devborder solid pink;
-  width:50%;
-  text-align: right;
+  text-align: center;
 }
 
 .time {
   border: $devborder solid pink;
-  width:50%;
-  text-align: left;
+  font-size: $fontSizeTime
 }
 
 .timeRandom {
   border: $devborder solid orange;
-  text-align: center;
+  font-size: $fontSizeVariance;
 }

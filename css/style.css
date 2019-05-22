@@ -3,7 +3,7 @@
   padding: 0px;
   box-sizing: border-box;
   user-select: none;
-  font-family: 'Karla', sans-serif;
+  font-family: 'Inconsolata', monospace;
   color: #666; }
 
 body {
@@ -38,24 +38,15 @@ body {
 
 .details {
   width: 100%;
-  border: 0px solid cyan; }
-
-.timeWrapper {
-  display: flex;
-  flex-direction: row; }
-
-.timeLabel {
-  border: 0px solid pink;
-  width: 50%;
-  text-align: right; }
+  border: 0px solid cyan;
+  text-align: center; }
 
 .time {
   border: 0px solid pink;
-  width: 50%;
-  text-align: left; }
+  font-size: 40px; }
 
 .timeRandom {
   border: 0px solid orange;
-  text-align: center; }
+  font-size: 17px; }
 
 /*# sourceMappingURL=style.css.map */

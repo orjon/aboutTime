@@ -18,12 +18,11 @@ $(() => {
 
   onload()
 
-
   function onload() {
     updateTime()
     updateClock()
     randomizeTime()
-    $displayedDetails.text('± 0...' + maxVariance + 'mins / ' + changeVariance/1000 + 'secs')
+    $displayedDetails.text('± 0…' + maxVariance + 'mins / ' + changeVariance/1000 + 'secs')
   }
 
   function updateTime() {
