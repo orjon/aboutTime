@@ -6,7 +6,6 @@
   box-sizing: border-box;
   user-select: none;
   font-family: 'Inconsolata', monospace;
-  color: #666;
 }
 
 body {
@@ -23,6 +22,11 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.topHalf {
+  width: 100%;
+  height: 100%;
 }
 
 .abouttime {
@@ -45,17 +49,36 @@ body {
 }
 
 .details {
-  width: 100%;
   border: $devborder solid cyan;
   text-align: center;
+  width: 100%;
+  color: $fontColor;
+  padding-bottom: 2vh;
+}
+
+.timeLabel {
+  border: $devborder solid pink;
+  font-size: $fontSizeTimeLabel;
 }
 
 .time {
   border: $devborder solid pink;
-  font-size: $fontSizeTime
+  font-size: $fontSizeTime;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.timeHours, .timeMinutes, .timeColon {
+  border: $devborder solid blue;
 }
 
 .timeRandom {
   border: $devborder solid orange;
   font-size: $fontSizeVariance;
+}
+
+.colorBackground {
+  color: $background;
 }

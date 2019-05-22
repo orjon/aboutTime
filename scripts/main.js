@@ -13,6 +13,9 @@ $(() => {
 
 
   const $displayedTime = $('.time')
+  const $displayedTimeHours = $('.timeHours')
+  const $displayedTimeMinutes = $('.timeMinutes')
+  const $displayedTimeColon = $('.timeColon')
   const $displayedDetails = $('.timeRandom')
   const $secondBlinker = $('.secondBlinker')
 
@@ -44,9 +47,11 @@ $(() => {
     if (seconds.length < 2) {
       seconds = '0' + seconds //display padding
     }
-    timeString = hours + ':' + minutes + ':' + seconds
+    timeString = hours + ':' + minutes
     console.log('Actual time: ', timeString)
-    $displayedTime.text(timeString)
+    // $displayedTime.text(timeString)
+    $displayedTimeHours.text(hours)
+    $displayedTimeMinutes.text(minutes)
   }
 
 
@@ -82,6 +87,7 @@ $(() => {
 
   function seconds() {
     $secondBlinker.toggle()
+    $displayedTimeColon.toggleClass('colorBackground')
   }
 
   setTimeout(function(){

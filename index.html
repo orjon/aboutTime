@@ -10,17 +10,24 @@
     <script type="text/javascript" src="scripts/main.js"></script>
   </head>
   <body class='flexColCenter'>
-    <div class='abouttime'>
-      <div class='clock'><img src='./images/abouttimebackground.jpg'></div>
-      <div class='hoursx10'></div>
-      <div class='hoursx01'></div>
-      <div class='secondBlinker'><img src='./images/secondblinker.png'></div>
-      <div class='minutesx10'></div>
-      <div class='minutesx01'></div>
-      <div class='overlay'><img src='./images/abouttimeOverlay.png'></div>
+    <div class='topHalf flexColCenter'>
+      <div class='abouttime'>
+        <div class='clock'><img src='./images/abouttimebackground.jpg'></div>
+        <div class='hoursx10'></div>
+        <div class='hoursx01'></div>
+        <div class='secondBlinker'><img src='./images/secondblinker.png'></div>
+        <div class='minutesx10'></div>
+        <div class='minutesx01'></div>
+        <div class='overlay'><img src='./images/abouttimeOverlay.png'></div>
+      </div>
     </div>
     <div class='details'>
-      <div class='time'></div>
+      <div class='timeLabel'>actual time:</div>
+      <div class='time'>
+        <span class='timeHours'></span>
+        <span class='timeColon'>:</span>
+        <span class='timeMinutes'></span>
+      </div>
       <div class='timeRandom'></div>
     </div>
   </body>
