@@ -10,12 +10,18 @@ $imageHeight: 550px;
   @include flexColumnCenter();
 }
 
+
+.top {
+    border: $devBorder solid green;
+}
 .explodeWrapper {
   width: $imageWidth;
   height: $imageHeight;
   border: $devBorder solid cyan;
   text-align: center;
   position: relative;
+
+
 
   img {
     border: $devBorder solild red;

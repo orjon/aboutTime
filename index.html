@@ -6,6 +6,7 @@
     <title>About Time</title>
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Inconsolata&display=swap" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script type="text/javascript" src="scripts/jsRapKnob.js"></script>
     <script type="text/javascript" src="scripts/main.js"></script>
@@ -30,22 +31,24 @@
           </div>
         </section>
         <section class='bottom'>
+
+          <div class='controls'>
+            <div class='knobs'>
+              <div id='varianceKnob' class='knob'></div>
+              <div id='frequnecyKnob' class='knob'></div>
+            </div>
+            <div class='correctTime'>
+              <div class='time'>
+                <span class='timeHours'></span>
+                <span class='timeColon'>:</span>
+                <span class='timeMinutes'></span>
+              </div>
+              <div class='timeLabel'>current time</div>
+            </div>
+          </div>
           <div class='description'>
             <div class='descriptionHeader'>About Time</div>
             <div class='descriptionText'>Approximate clock that adds a constrained random number to the current time. This is a web version of a working physical clock programmed on a PIC microcontroller.</div>
-          </div>
-          <div class='knobs'>
-            <div id='varianceKnob'></div>
-            <div id='frequnecyKnob'></div>
-          </div>
-          <div class='details'>
-            <div class='time'>
-              <span class='timeHours'></span>
-              <span class='timeColon'>:</span>
-              <span class='timeMinutes'></span>
-            </div>
-            <div class='timeLabel'>actual time</div>
-            <!-- <div class='timeRandom'></div> -->
           </div>
         </section>
       </div>

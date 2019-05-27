@@ -51,7 +51,6 @@ $(() => {
     if (seconds.length < 2) {
       seconds = '0' + seconds //display padding
     }
-
     // timeString = hours + ':' + minutes
     // console.log('Actual time: ', timeString)
     // $displayedTime.text(timeString)
@@ -107,6 +106,7 @@ $(() => {
       maxVariance = Math.floor(value * 10)
       console.log('maxVariance: '+ maxVariance)
       clearIntervals()
+      randomizeTime()
       setInternvals()
     }
   })
@@ -120,6 +120,7 @@ $(() => {
       frequency = Math.floor(value * 30000)
       console.log('freq: '+ Math.floor(frequency/1000))
       clearIntervals()
+      randomizeTime()
       setInternvals()
     }
   })

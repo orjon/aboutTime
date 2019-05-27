@@ -1,3 +1,44 @@
+.leftCol, .rightCol {
+  width: 5vw;
+  height: 100vh;
+  border: 0px solid lime;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border: 0px solid magenta; }
+
+.leftCol a {
+  -ms-transform: rotate(-90deg);
+  /* IE 9 */
+  -webkit-transform: rotate(-90deg);
+  /* Safari */
+  transform: rotate(-90deg);
+  /* Standard syntax */ }
+
+.rightCol a {
+  -ms-transform: rotate(90deg);
+  /* IE 9 */
+  -webkit-transform: rotate(90deg);
+  /* Safari */
+  transform: rotate(90deg);
+  /* Standard syntax */ }
+
+.navArrow {
+  height: 2.5vh;
+  border: 0px solid cyan;
+  opacity: 0.95;
+  transition-timing-function: ease-in;
+  -webkit-transition: opacity 2s;
+  /* For Safari 3.1 to 6.0 */
+  transition: opacity 2s; }
+  .navArrow:hover {
+    opacity: 0.4;
+    transition-timing-function: ease-out;
+    -webkit-transition: opacity .2s;
+    /* For Safari 3.1 to 6.0 */
+    transition: opacity .2s; }
+
 .rapKnob {
   border-radius: 50%;
   border-color: black;
@@ -43,6 +84,9 @@
   justify-content: center;
   align-items: center; }
 
+.top {
+  border: 0px solid green; }
+
 .explodeWrapper {
   width: 940px;
   height: 550px;
@@ -61,8 +105,7 @@
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
-  user-select: none;
-  font-family: 'Inconsolata', monospace; }
+  user-select: none; }
 
 body {
   height: 100vh;
@@ -76,33 +119,6 @@ body {
   flex-direction: row;
   justify-content: center;
   align-items: center; }
-
-.leftCol, .rightCol {
-  width: 100%;
-  height: 100vh;
-  border: 0px solid lime;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  width: 5vh;
-  border: 0px solid magenta; }
-  .leftCol a, .rightCol a {
-    -ms-transform: rotate(-90deg);
-    /* IE 9 */
-    -webkit-transform: rotate(-90deg);
-    /* Safari */
-    transform: rotate(-90deg);
-    /* Standard syntax */ }
-
-.rightCol a {
-  -ms-transform: rotate(90deg);
-  /* IE 9 */
-  -webkit-transform: rotate(90deg);
-  /* Safari */
-  transform: rotate(90deg);
-  /* Standard syntax */ }
 
 .centerCol {
   width: 90vw;
@@ -122,82 +138,72 @@ body {
   align-items: center;
   border: 0px solid red; }
 
-.bottom {
-  padding-bottom: 2vh;
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-between;
-  align-items: flex-start;
-  border: 0px solid green; }
-
 .abouttime {
   width: 470px;
   height: 470px;
   border: 0px solid yellow;
   position: relative; }
+  .abouttime .hoursx10, .abouttime .hoursx01, .abouttime .minutesx01, .abouttime .minutesx10, .abouttime .secondBlinker {
+    position: absolute;
+    left: 0px;
+    top: 0px; }
+  .abouttime .overlay {
+    position: absolute;
+    left: 0px;
+    top: 0px; }
 
-.hoursx10, .hoursx01, .minutesx01, .minutesx10, .secondBlinker {
-  position: absolute;
-  left: 0px;
-  top: 0px; }
-
-.overlay {
-  position: absolute;
-  left: 0px;
-  top: 0px; }
-
-.details {
-  border: 0px solid orange;
-  text-align: center;
-  color: black; }
-
-.knobs {
-  border: 0px solid orange;
-  padding-left: 20px;
-  padding-right: 20px; }
-
-.timeLabel {
-  border: 0px solid pink;
-  font-size: 17px; }
-
-.time {
-  border: 0px solid pink;
-  font-size: 62px;
+.bottom {
+  padding-bottom: 2vh;
+  max-width: 600px;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
-  align-items: center; }
-
-.timeHours, .timeMinutes, .timeColon {
-  border: 0px solid blue; }
-
-.timeColon {
-  padding-left: -5px;
-  padding-right: -5px; }
-
-.timeRandom {
-  border: 0px solid orange;
-  font-size: 17px; }
-
-.text {
-  width: 30vw;
-  border: 0px solid pink;
-  font-size: 17px;
-  text-align: justify; }
-
-.navArrow {
-  height: 2.5vh;
-  border: 0px solid cyan;
-  opacity: 0.95;
-  transition-timing-function: ease-in;
-  -webkit-transition: opacity 2s;
-  /* For Safari 3.1 to 6.0 */
-  transition: opacity 2s; }
-  .navArrow:hover {
-    opacity: 0.4;
-    transition-timing-function: ease-out;
-    -webkit-transition: opacity .2s;
-    /* For Safari 3.1 to 6.0 */
-    transition: opacity .2s; }
+  align-items: center;
+  border: 0px solid green;
+  color: black;
+  font-family: 'Montserrat', monospace; }
+  .bottom .description {
+    border: 0px solid pink;
+    font-size: 17px;
+    text-align: justify; }
+    .bottom .description .descriptionHeader {
+      border: 0px solid pink;
+      border-bottom: 1px solid black;
+      padding-bottom: .25em; }
+    .bottom .description .descriptionText {
+      padding-top: .25em;
+      border: 0px solid pink; }
+  .bottom .controls {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 4vh;
+    font-family: 'Inconsolata', monospace;
+    color: black; }
+    .bottom .controls .knobs {
+      border: 0px solid orange;
+      padding-left: 50px;
+      padding-right: 50px; }
+    .bottom .controls .correctTime {
+      border: 0px solid orange;
+      text-align: center; }
+      .bottom .controls .correctTime .time {
+        border: 0px solid pink;
+        font-size: 62px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center; }
+        .bottom .controls .correctTime .time .timeHours, .bottom .controls .correctTime .time .timeMinutes, .bottom .controls .correctTime .time .timeColon {
+          border: 0px solid blue; }
+        .bottom .controls .correctTime .time .timeColon {
+          padding-left: -5px;
+          padding-right: -5px; }
+        .bottom .controls .correctTime .time .timeLabel {
+          border: 0px solid pink;
+          font-size: 17px; }
+        .bottom .controls .correctTime .time .colorBackground {
+          color: white; }
 
 /*# sourceMappingURL=style.css.map */
