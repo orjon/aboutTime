@@ -2,14 +2,14 @@
 $(() => {
 
   let theTime = undefined
-  let timeString = undefined
+  // let timeString = undefined
   const hrs = 0
   const min = 1
   const sec = 2
 
-  const maxVariance = 5
+  let maxVariance = 5
   let variance = 0
-  const changeVariance = 15000
+  let frequency = 15000
 
 
   const $displayedTime = $('.time')
@@ -19,13 +19,17 @@ $(() => {
   const $displayedDetails = $('.timeRandom')
   const $secondBlinker = $('.secondBlinker')
 
+  let intRandom = setInterval(randomizeTime, frequency,0)
+  let intClock = setInterval(updateClock, 1000)
+  let intSeconds = setInterval(seconds, 500)
+
   onload()
 
   function onload() {
     updateTime()
     updateClock()
     randomizeTime()
-    $displayedDetails.text('± 0…' + maxVariance + 'mins / ' + changeVariance/1000 + 'secs')
+    $displayedDetails.text('± 0…' + maxVariance + 'mins / ' + frequency/1000 + 'secs')
   }
 
   function updateTime() {
@@ -47,8 +51,9 @@ $(() => {
     if (seconds.length < 2) {
       seconds = '0' + seconds //display padding
     }
-    timeString = hours + ':' + minutes
-    console.log('Actual time: ', timeString)
+
+    // timeString = hours + ':' + minutes
+    // console.log('Actual time: ', timeString)
     // $displayedTime.text(timeString)
     $displayedTimeHours.text(hours)
     $displayedTimeMinutes.text(minutes)
@@ -90,10 +95,46 @@ $(() => {
     $displayedTimeColon.toggleClass('colorBackground')
   }
 
-  setTimeout(function(){
-    setInterval(randomizeTime, changeVariance,0)
-    setInterval(updateClock, 1000)
-    setInterval(seconds, 500)
+  $('#varianceKnob').jsRapKnob({
+    position: 0.5,
+    onChange: function(value){
+      value = Math.floor(value * 10)
+      $('.rapKnobCaption',this).text('± 0…' + value + 'min')
+    },
+
+
+    onMouseUp: function(value){
+      maxVariance = Math.floor(value * 10)
+      console.log('maxVariance: '+ maxVariance)
+      clearIntervals()
+      setInternvals()
+    }
   })
+
+  $('#frequnecyKnob').jsRapKnob({
+    position: 0.5,
+    onChange: function(value){
+      $('.rapKnobCaption',this).text('@ ' + Math.floor(value * 30) + 'sec')
+    },
+    onMouseUp: function(value){
+      frequency = Math.floor(value * 30000)
+      console.log('freq: '+ Math.floor(frequency/1000))
+      clearIntervals()
+      setInternvals()
+    }
+  })
+
+
+  function setInternvals(){
+    intRandom = setInterval(randomizeTime, frequency,0)
+    intClock = setInterval(updateClock, 1000)
+    intSeconds = setInterval(seconds, 500)
+  }
+
+  function clearIntervals(){
+    clearInterval(intRandom)
+    clearInterval(intClock)
+    clearInterval(intSeconds)
+  }
 
 })
