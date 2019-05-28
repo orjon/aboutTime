@@ -98,7 +98,7 @@ $(() => {
     position: 0.5,
     onChange: function(value){
       value = Math.floor(value * 10)
-      $('.rapKnobCaption',this).text('± 0…' + value + 'min')
+      $('.rapKnobCaption',this).text('±0…' + value + 'min')
     },
 
 
@@ -114,7 +114,7 @@ $(() => {
   $('#frequnecyKnob').jsRapKnob({
     position: 0.5,
     onChange: function(value){
-      $('.rapKnobCaption',this).text('@ ' + Math.floor(value * 30) + 'sec')
+      $('.rapKnobCaption',this).text('@' + ((value * 30).toFixed(1)) + 'sec')
     },
     onMouseUp: function(value){
       frequency = Math.floor(value * 30000)
@@ -122,6 +122,8 @@ $(() => {
       clearIntervals()
       randomizeTime()
       setInternvals()
+
+
     }
   })
 
