@@ -6,6 +6,7 @@ $(() => {
 
   $('.explode > div:gt(0)').hide()
 
+
   function explode() {
     $('.explode > div:first')
       .fadeOut(fadeOut)
