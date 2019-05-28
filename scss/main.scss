@@ -17,11 +17,9 @@ body {
   border: $devBorder solid blue;
   background-color: $background;
   overflow: hidden;
-}
-
-.wrapper {
   @include flexRowCenter();
 }
+
 
 .centerCol {
   width: 90vw;
@@ -36,7 +34,6 @@ body {
   @include flexColumnCenter();
   border: $devBorder solid red;
 }
-
 
 
 .abouttime {
