@@ -12,49 +12,59 @@
     <script type="text/javascript" src="scripts/main.js"></script>
   </head>
   <body>
-    <div class='leftCol'>
-      <a href='details.html'>
-        <img class='navArrow' src='./images/arrowGrey100.png' alt='navigate back button'>
-      </a>
-    </div>
-    <div class='centerCol'>
-      <section class='top'>
-        <div class='abouttime'>
-          <div class='clock'><img src='./images/abouttimebackground.jpg'></div>
-          <div class='hoursx10'></div>
-          <div class='hoursx01'></div>
-          <div class='secondBlinker'><img src='./images/secondblinker.png'></div>
-          <div class='minutesx10'></div>
-          <div class='minutesx01'></div>
-          <div class='overlay'><img src='./images/abouttimeOverlay.png'></div>
+    <div id='screenContainer'>
+      <nav>
+        <div class='leftSide'>
+          <a href='../code.html'><img class='navIcon code' src='./images/nav/navCode.png'></a>
+          <a href='../design.html'><img class='navIcon design' src='./images/nav/navDesign.png'></a>
+          <a href='../electronics.html'><img class='navIcon electronics' src='./images/nav/navElectronics.png'></a>
         </div>
-      </section>
-      <section class='bottom'>
+        <div class='rightSide'>
+          <a href='../orjon.html'><img class='navIcon face' src='./images/nav/navFace.png'></a>
+        </div>
+        <div class='navText'></div>
+      </nav>
 
-        <div class='controls'>
-          <div class='knobs'>
-            <div id='varianceKnob' class='knob'></div>
-            <div id='frequnecyKnob' class='knob'></div>
+      <div id='content'>
+        <section class='top'>
+          <div class='abouttime'>
+            <div class='clock'><img src='./images/abouttimebackground.jpg'></div>
+            <div class='hoursx10'></div>
+            <div class='hoursx01'></div>
+            <div class='secondBlinker'><img src='./images/secondblinker.png'></div>
+            <div class='minutesx10'></div>
+            <div class='minutesx01'></div>
+            <div class='overlay'><img src='./images/abouttimeOverlay.png'></div>
           </div>
-          <div class='correctTime'>
-            <div class='time'>
-              <span class='timeHours'></span>
-              <span class='timeColon'>:</span>
-              <span class='timeMinutes'></span>
+        </section>
+        <section class='bottom'>
+
+          <div class='controls'>
+            <div class='knobs'>
+              <div id='varianceKnob' class='knob'></div>
+              <div id='frequnecyKnob' class='knob'></div>
             </div>
-            <div class='timeLabel'>current time</div>
+            <div class='correctTime'>
+              <div class='time'>
+                <span class='timeHours'></span>
+                <span class='timeColon'>:</span>
+                <span class='timeMinutes'></span>
+              </div>
+              <div class='timeLabel'>current time</div>
+            </div>
           </div>
-        </div>
-        <div class='description'>
-          <div class='descriptionHeader'>About Time</div>
-          <div class='descriptionText'>Approximte clock that adds a constrained random number to the current time.<p>Physical version programmed on a PIC microcontroller</p></div>
-        </div>
-      </section>
+          <div class='description'>
+            <div class='descriptionHeader'>About Time</div>
+            <div class='descriptionText'>Approximte clock that adds a constrained random number to the current time.<p>Physical version programmed on a PIC microcontroller</p></div>
+          </div>
+        </section>
+      </div>
     </div>
-    <div class='rightCol'>
-      <a href='details.html'>
-        <img class='navArrow' src='./images/arrowGrey100.png' alt='navigate back button'>
-      </a>
+
+    <div class='navArrows'>
+      <a href='./details.html'><img class='navArrow left' src='./images/nav/navArrowLeft.png'></a>
+      <a href='./details.html'><img class='navArrow right' src='./images/nav/navArrowRight.png'></a>
     </div>
+
   </body>
 </html>

@@ -1,43 +1,97 @@
-.leftCol, .rightCol {
-  width: 5vw;
-  height: 100vh;
-  border: 0px solid lime;
+nav {
   display: flex;
   flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  border: 0px solid magenta; }
+  justify-content: space-between;
+  width: 100%;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  font-size: var(--fontSizeHello);
+  color: black;
+  background-color: white; }
+  nav a {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid red;
+    width: 35px;
+    height: 29px; }
+  @media (pointer: fine) {
+    nav a {
+      width: 39px;
+      height: 39px;
+      border-radius: 50%;
+      border: 2px solid rgba(0, 0, 0, 0); }
+      nav a:hover {
+        background-color: black;
+        border: 2px solid black; }
+        nav a:hover img {
+          filter: invert(1); } }
+  nav .leftSide {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    width: 100%;
+    border: 1px solid black; }
+    nav .leftSide a {
+      margin-right: 5px; }
+  nav .rightSide {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    border: 1px solid black; }
+  nav .navIcon {
+    width: 35px;
+    height: 29px;
+    border: 1px solid orange; }
+  nav #hello {
+    position: fixed;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    color: #EEE;
+    text-shadow: 00px 0px 4px  white; }
+  nav .navText {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 1px solid magenta; }
+  nav .hidden {
+    display: none; }
 
-.leftCol a {
-  -ms-transform: rotate(-90deg);
-  /* IE 9 */
-  -webkit-transform: rotate(-90deg);
-  /* Safari */
-  transform: rotate(-90deg);
-  /* Standard syntax */ }
-
-.rightCol a {
-  -ms-transform: rotate(90deg);
-  /* IE 9 */
-  -webkit-transform: rotate(90deg);
-  /* Safari */
-  transform: rotate(90deg);
-  /* Standard syntax */ }
-
-.navArrow {
-  height: 2.5vh;
-  border: 0px solid cyan;
+@media (pointer: fine) {
+  nav {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 5px;
+    padding-right: 5px; } }
+.navArrows .navArrow {
+  height: 5vh;
+  border: 1px solid cyan;
   opacity: 0.95;
   transition-timing-function: ease-in;
   -webkit-transition: opacity 2s;
   /* For Safari 3.1 to 6.0 */
   transition: opacity 2s; }
-  .navArrow:hover {
+  .navArrows .navArrow:hover {
     opacity: 0.4;
     transition-timing-function: ease-out;
     -webkit-transition: opacity .2s;
     /* For Safari 3.1 to 6.0 */
     transition: opacity .2s; }
+.navArrows .left {
+  position: fixed;
+  top: 50%;
+  left: 50px;
+  transform: translate(0%, -50%); }
+.navArrows .right {
+  position: fixed;
+  top: 50%;
+  right: 50px;
+  transform: translate(0%, -50%); }
 
 .rapKnob {
   border-radius: 50%;
@@ -62,7 +116,7 @@
   z-index: 1; }
 
 .rapKnobCaption {
-  border: 0px solid blue;
+  border: 1px solid blue;
   left: 0px;
   right: 0px;
   top: 90%;
@@ -85,16 +139,16 @@
   align-items: center; }
 
 .top {
-  border: 0px solid green; }
+  border: 1px solid green; }
 
 .explodeWrapper {
   width: 940px;
   height: 550px;
-  border: 0px solid cyan;
+  border: 1px solid cyan;
   text-align: center;
   position: relative; }
   .explodeWrapper img {
-    border: 0px solild red;
+    border: 1px solild red;
     position: absolute;
     top: 0;
     left: 0;
@@ -110,7 +164,6 @@
 body {
   height: 100vh;
   width: 100vw;
-  border: 0px solid blue;
   background-color: white;
   overflow: hidden;
   display: flex;
@@ -118,28 +171,37 @@ body {
   justify-content: center;
   align-items: center; }
 
-.centerCol {
-  width: 90vw;
-  height: 100vh;
+#screenContainer {
+  width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  border: 0px solid lime; }
+  align-items: center; }
+  #screenContainer nav {
+    border: 1px solid blue; }
+  #screenContainer #content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid blue; }
 
 .top {
-  width: 90vw;
+  width: 100%;
   height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border: 0px solid red; }
+  border: 1px solid red; }
 
 .abouttime {
   width: 470px;
   height: 470px;
-  border: 0px solid yellow;
+  border: 1px solid yellow;
   position: relative; }
   .abouttime .hoursx10, .abouttime .hoursx01, .abouttime .minutesx01, .abouttime .minutesx10, .abouttime .secondBlinker {
     position: absolute;
@@ -157,20 +219,20 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border: 0px solid green;
+  border: 1px solid green;
   color: black;
   font-family: 'Montserrat', monospace; }
   .bottom .description {
-    border: 0px solid pink;
+    border: 1px solid pink;
     font-size: 17px;
     text-align: justify; }
     .bottom .description .descriptionHeader {
-      border: 0px solid pink;
+      border: 1px solid pink;
       border-bottom: 1px solid black;
       padding-bottom: .25em; }
     .bottom .description .descriptionText {
       padding-top: .25em;
-      border: 0px solid pink; }
+      border: 1px solid pink; }
   .bottom .controls {
     display: flex;
     flex-direction: row;
@@ -180,26 +242,26 @@ body {
     font-family: 'Inconsolata', monospace;
     color: black; }
     .bottom .controls .knobs {
-      border: 0px solid orange;
+      border: 1px solid orange;
       padding-left: 50px;
       padding-right: 50px; }
     .bottom .controls .correctTime {
-      border: 0px solid orange;
+      border: 1px solid orange;
       text-align: center; }
       .bottom .controls .correctTime .time {
-        border: 0px solid pink;
+        border: 1px solid pink;
         font-size: 62px;
         display: flex;
         flex-direction: row;
         justify-content: center;
         align-items: center; }
         .bottom .controls .correctTime .time .timeHours, .bottom .controls .correctTime .time .timeMinutes, .bottom .controls .correctTime .time .timeColon {
-          border: 0px solid blue; }
+          border: 1px solid blue; }
         .bottom .controls .correctTime .time .timeColon {
           padding-left: -5px;
           padding-right: -5px; }
         .bottom .controls .correctTime .time .timeLabel {
-          border: 0px solid pink;
+          border: 1px solid pink;
           font-size: 17px; }
         .bottom .controls .correctTime .time .colorBackground {
           color: white; }
