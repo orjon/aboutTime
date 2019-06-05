@@ -1,15 +1,16 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang='en' dir='ltr'>
   <head>
-    <meta charset="utf-8">
-    <link rel='shortcut icon' type='image/x-icon' href='./images/favicon.ico' />
-    <title>About Time</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link href="https://fonts.googleapis.com/css?family=Inconsolata&display=swap" rel="stylesheet">
-    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <meta charset='utf-8'>
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js" charset="utf-8"></script>
     <script type="text/javascript" src="scripts/jsRapKnob.js"></script>
-    <script type="text/javascript" src="scripts/main.js"></script>
+    <script type='text/javascript' src='scripts/main.js'></script>
+    <title>orjon.com : About Time</title>
+    <link rel='shortcut icon' type='image/x-icon' href='./images/favicon.ico' />
+    <link rel="stylesheet" href="css/normalize.css">
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+    <link rel='stylesheet' href='./css/style.css'>
   </head>
   <body>
     <div id='screenContainer'>
@@ -17,28 +18,30 @@
         <div class='leftSide'>
           <a href='../code.html'><img class='navIcon code' src='./images/nav/navCode.png'></a>
           <a href='../design.html'><img class='navIcon design' src='./images/nav/navDesign.png'></a>
-          <a href='../electronics.html'><img class='navIcon electronics' src='./images/nav/navElectronics.png'></a>
+          <a href='../electronics.html' class='current'><img class='navIcon electronics' src='./images/nav/navElectronics.png'></a>
+          <div class='navText'>electronics</div>
         </div>
         <div class='rightSide'>
           <a href='../orjon.html'><img class='navIcon face' src='./images/nav/navFace.png'></a>
         </div>
-        <div class='navText'></div>
       </nav>
 
       <div id='content'>
         <section class='top'>
-          <div class='abouttime'>
-            <div class='clock'><img src='./images/abouttimebackground.jpg'></div>
-            <div class='hoursx10'></div>
-            <div class='hoursx01'></div>
-            <div class='secondBlinker'><img src='./images/secondblinker.png'></div>
-            <div class='minutesx10'></div>
-            <div class='minutesx01'></div>
-            <div class='overlay'><img src='./images/abouttimeOverlay.png'></div>
+          <div id="stretchBox" class='container'>
+            <div class='center'>
+              <div class='clock'><img src='./images/abouttimebackground.jpg'></div>
+              <div class='hoursx10'></div>
+              <div class='hoursx01'></div>
+              <div class='secondBlinker'><img src='./images/secondblinker.png'></div>
+              <div class='minutesx10'></div>
+              <div class='minutesx01'></div>
+              <div class='overlay'><img src='./images/abouttimeOverlay.png'></div>
+            </div>
           </div>
         </section>
-        <section class='bottom'>
 
+        <section class='bottom'>
           <div class='controls'>
             <div class='knobs'>
               <div id='varianceKnob' class='knob'></div>
@@ -55,16 +58,22 @@
           </div>
           <div class='description'>
             <div class='descriptionHeader'>About Time</div>
-            <div class='descriptionText'>Approximte clock that adds a constrained random number to the current time.<p>Physical version programmed on a PIC microcontroller</p></div>
+            <div class='descriptionText'>Approximte clock that adds a constrained random number to the current time. Made with a PIC microcontroller & custom circuitry.</div>
           </div>
         </section>
       </div>
     </div>
 
     <div class='navArrows'>
-      <a href='./details.html'><img class='navArrow left' src='./images/nav/navArrowLeft.png'></a>
+      <a href='http://www.orjon.com/timeframe/index.html'><img class='navArrow left' src='./images/nav/navArrowLeft.png'></a>
       <a href='./details.html'><img class='navArrow right' src='./images/nav/navArrowRight.png'></a>
     </div>
+
+    <footer>
+      <div id='displayContact' class='text'>
+        <a href='mailto:contact@orjon.com'>contact@orjon.com</a>
+      </div>
+    </footer>
 
   </body>
 </html>

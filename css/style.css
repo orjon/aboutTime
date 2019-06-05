@@ -15,9 +15,40 @@ nav {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border: 1px solid red;
-    width: 35px;
-    height: 29px; }
+    border: 0px solid red;
+    width: 29px;
+    height: 29px;
+    border-radius: 50%; }
+  nav .current {
+    background-color: black;
+    border: 2px solid black; }
+    nav .current img {
+      filter: invert(1); }
+  nav .leftSide {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    border: 0px solid black; }
+    nav .leftSide a {
+      margin-right: 5px; }
+  nav .rightSide {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    border: 0px solid black; }
+  nav .navIcon {
+    width: 28px;
+    height: 23px;
+    border: 0px solid orange; }
+  nav .navText {
+    padding-left: 5px;
+    vertical-align: center;
+    font-size: 17px;
+    border: 0px solid magenta; }
+  nav .hidden {
+    display: none; }
   @media (pointer: fine) {
     nav a {
       width: 39px;
@@ -28,49 +59,18 @@ nav {
         background-color: black;
         border: 2px solid black; }
         nav a:hover img {
-          filter: invert(1); } }
-  nav .leftSide {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    width: 100%;
-    border: 1px solid black; }
-    nav .leftSide a {
-      margin-right: 5px; }
-  nav .rightSide {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    border: 1px solid black; }
-  nav .navIcon {
-    width: 35px;
-    height: 29px;
-    border: 1px solid orange; }
-  nav #hello {
-    position: fixed;
-    transform: translate(-50%, -50%);
-    top: 50%;
-    left: 50%;
-    color: #EEE;
-    text-shadow: 00px 0px 4px  white; }
-  nav .navText {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    border: 1px solid magenta; }
-  nav .hidden {
-    display: none; }
+          filter: invert(1); }
+    nav .navIcon {
+      width: 35px;
+      height: 29px;
+      border: 0px solid orange; }
+    nav .navText {
+      padding-left: 15px;
+      font-size: 25px; } }
 
-@media (pointer: fine) {
-  nav {
-    padding-top: 5px;
-    padding-bottom: 5px;
-    padding-left: 5px;
-    padding-right: 5px; } }
 .navArrows .navArrow {
   height: 5vh;
-  border: 1px solid cyan;
+  border: 0px solid cyan;
   opacity: 0.95;
   transition-timing-function: ease-in;
   -webkit-transition: opacity 2s;
@@ -85,14 +85,17 @@ nav {
 .navArrows .left {
   position: fixed;
   top: 50%;
-  left: 50px;
+  left: 5%;
   transform: translate(0%, -50%); }
 .navArrows .right {
   position: fixed;
   top: 50%;
-  right: 50px;
+  right: 5%;
   transform: translate(0%, -50%); }
 
+@media (min-width: 1200px) {
+  .navArrow {
+    display: block; } }
 .rapKnob {
   border-radius: 50%;
   border-color: black;
@@ -116,7 +119,7 @@ nav {
   z-index: 1; }
 
 .rapKnobCaption {
-  border: 1px solid blue;
+  border: 0px solid blue;
   left: 0px;
   right: 0px;
   top: 90%;
@@ -126,50 +129,85 @@ nav {
   white-space: nowrap;
   z-index: 2; }
 
-.detailsBody {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center; }
-
-.detailsBottom {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center; }
+footer #displayVersion {
+  color: #999;
+  position: fixed;
+  bottom: 0.5%;
+  left: 0.5%;
+  font-family: sans-serif;
+  font-size: 1.6222222222vh; }
+footer #displayVersion a {
+  text-decoration: none;
+  color: #ccc;
+  font-family: sans-serif; }
+footer #displayContact a {
+  text-decoration: none;
+  color: #ccc;
+  position: fixed;
+  bottom: 0.5%;
+  right: 0.5%;
+  font-family: sans-serif;
+  font-size: 1.6222222222vh; }
 
 .top {
-  border: 1px solid green; }
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 0px solid red; }
 
-.explodeWrapper {
-  width: 940px;
-  height: 550px;
-  border: 1px solid cyan;
-  text-align: center;
-  position: relative; }
-  .explodeWrapper img {
-    border: 1px solild red;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%; }
+.container {
+  width: 100%;
+  max-width: 1750px;
+  height: 100%;
+  border: 0px solid cyan; }
+
+.bottom {
+  padding-bottom: 2vh;
+  max-width: 600px;
+  margin-left: 5vw;
+  margin-right: 5vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 0px solid green;
+  color: #333;
+  font-family: 'Montserrat', monospace; }
+  .bottom .description {
+    border: 0px solid pink;
+    font-size: 17px;
+    text-align: justify; }
+    .bottom .description .descriptionHeader {
+      border: 0px solid pink;
+      border-bottom: 1px solid #333;
+      padding-bottom: .25em; }
+    .bottom .description .descriptionText {
+      padding-top: .25em;
+      border: 0px solid pink; }
+
+.text {
+  width: 50vw;
+  border: 0px solid pink;
+  font-size: 17px;
+  text-align: justify; }
 
 * {
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
-  user-select: none; }
+  user-select: none;
+  font-family: 'Montserrat', sans-serif; }
 
 body {
-  height: 100vh;
   width: 100vw;
+  height: 100vh;
+  color: black;
   background-color: white;
-  overflow: hidden;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center; }
+  font-weight: 300;
+  background-color: white; }
 
 #screenContainer {
   width: 100%;
@@ -179,7 +217,7 @@ body {
   justify-content: center;
   align-items: center; }
   #screenContainer nav {
-    border: 1px solid blue; }
+    border: 0px solid blue; }
   #screenContainer #content {
     width: 100%;
     height: 100%;
@@ -187,7 +225,10 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border: 1px solid blue; }
+    border: 0px solid blue; }
+
+body::-webkit-scrollbar {
+  width: 0 !important; }
 
 .top {
   width: 100%;
@@ -196,12 +237,29 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border: 1px solid red; }
+  border: 0px solid red; }
+
+.center {
+  width: 100%;
+  height: 100%;
+  border: 0px solid magenta;
+  text-align: center;
+  position: relative; }
+  .center img {
+    max-width: 100%;
+    max-height: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 0px solid lime; }
+  .center .hidden {
+    display: none; }
 
 .abouttime {
-  width: 470px;
-  height: 470px;
-  border: 1px solid yellow;
+  width: 100%;
+  height: 100%;
+  border: 0px solid yellow;
   position: relative; }
   .abouttime .hoursx10, .abouttime .hoursx01, .abouttime .minutesx01, .abouttime .minutesx10, .abouttime .secondBlinker {
     position: absolute;
@@ -215,24 +273,26 @@ body {
 .bottom {
   padding-bottom: 2vh;
   max-width: 600px;
+  margin-left: 5vw;
+  margin-right: 5vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border: 1px solid green;
-  color: black;
+  border: 0px solid green;
+  color: #333;
   font-family: 'Montserrat', monospace; }
   .bottom .description {
-    border: 1px solid pink;
+    border: 0px solid pink;
     font-size: 17px;
     text-align: justify; }
     .bottom .description .descriptionHeader {
-      border: 1px solid pink;
-      border-bottom: 1px solid black;
+      border: 0px solid pink;
+      border-bottom: 1px solid #333;
       padding-bottom: .25em; }
     .bottom .description .descriptionText {
       padding-top: .25em;
-      border: 1px solid pink; }
+      border: 0px solid pink; }
   .bottom .controls {
     display: flex;
     flex-direction: row;
@@ -240,28 +300,27 @@ body {
     align-items: center;
     padding-bottom: 4vh;
     font-family: 'Inconsolata', monospace;
-    color: black; }
+    color: #333; }
     .bottom .controls .knobs {
-      border: 1px solid orange;
-      padding-left: 50px;
-      padding-right: 50px; }
+      border: 0px solid orange;
+      padding-right: 20px; }
     .bottom .controls .correctTime {
-      border: 1px solid orange;
+      border: 0px solid orange;
       text-align: center; }
       .bottom .controls .correctTime .time {
-        border: 1px solid pink;
+        border: 0px solid pink;
         font-size: 62px;
         display: flex;
         flex-direction: row;
         justify-content: center;
         align-items: center; }
         .bottom .controls .correctTime .time .timeHours, .bottom .controls .correctTime .time .timeMinutes, .bottom .controls .correctTime .time .timeColon {
-          border: 1px solid blue; }
+          border: 0px solid blue; }
         .bottom .controls .correctTime .time .timeColon {
           padding-left: -5px;
           padding-right: -5px; }
         .bottom .controls .correctTime .time .timeLabel {
-          border: 1px solid pink;
+          border: 0px solid pink;
           font-size: 17px; }
         .bottom .controls .correctTime .time .colorBackground {
           color: white; }
