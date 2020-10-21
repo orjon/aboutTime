@@ -93,33 +93,7 @@ body::-webkit-scrollbar {
 }
 
 .bottom {
-  padding-bottom: 2vh;
-  max-width: 600px;
-  margin-left: 5vw;
-  margin-right: 5vw;
-  @include flexColumnCenter();
-  border: $devBorder solid green;
-  color: $fontColor;
-  font-family: 'Montserrat', monospace;
-
-  .description {
-    border: $devBorder solid pink;
-    font-size: $fontSizeTimeLabel;
-    text-align: justify;
-    .descriptionHeader {
-
-      border: $devBorder solid pink;
-      border-bottom: 1px solid $fontColor;
-      padding-bottom: .25em;
-    }
-    .descriptionText {
-      padding-top: .25em;
-
-      border: $devBorder solid pink;
-    }
-  }
-
-
+  
   .controls {
     @include flexRowCenter();
     padding-bottom: 4vh;
